@@ -31,7 +31,7 @@ jobs:
       shell: pwsh
       run: |
           pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
-          dotnet build --configuration Release --output .
+          dotnet build --configuration Release --output ./
           popd  
           
     - name: Deploy to Azure Function App
