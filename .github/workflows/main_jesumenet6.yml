@@ -21,18 +21,17 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
+
     - name: Setup .NET Core 2
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: ${{ env.DOTNET_CORE_VERSION2 }}
+        
     - name: Setup .NET Core (for inproc extensions)
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: ${{ env.DOTNET_CORE_VERSION_INPROC }}
+        
     - name: Deploy to Azure Function App
       uses: Azure/functions-action@v1
       with:
